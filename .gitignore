@@ -1,0 +1,65 @@
+# =========================
+# .NET / Visual Studio
+# =========================
+**/bin/
+**/obj/
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+
+# Visual Studio
+.vs/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# Angular / Node
+# =========================
+**/node_modules/
+**/dist/
+**/.angular/
+**/.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.angular-cache/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =========================
+# Env / Secrets
+# =========================
+**/.env
+**/.env.*
+**/secrets.json
+**/*secrets*.json
+
+# =========================
+# Docker
+# =========================
+**/*.log
+
+# =========================
+# Test results / coverage
+# =========================
+**/TestResults/
+**/coverage/
+**/coverage.*
+
+# ASP.NET Core local settings
+**/appsettings.Development.json
+**/appsettings.*.Development.json
