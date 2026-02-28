@@ -1,0 +1,172 @@
+# OrderFlow
+
+A clean architecture ASP.NET Core Web API for product management, built with .NET 8 and PostgreSQL.
+
+---
+
+## 🇺🇸 English
+
+### 📌 Overview
+
+OrderFlow is a backend API designed to demonstrate clean architecture principles, domain-driven structure, and professional software engineering practices.
+
+It implements a complete CRUD for Products with:
+
+- Pagination
+- Filtering
+- Soft delete
+- Global exception handling
+- Unit tests
+- CI pipeline with GitHub Actions
+
+---
+
+### 🏗 Architecture
+
+The project follows a layered architecture:
+
+- **Domain** → Core business rules and entities  
+- **Application** → UseCases and business orchestration  
+- **Infrastructure** → EF Core, PostgreSQL, repository implementations  
+- **API** → Controllers, Middleware, Dependency Injection  
+
+This structure enforces separation of concerns and testability.
+
+---
+
+### 🚀 Tech Stack
+
+- .NET 8
+- ASP.NET Core Web API
+- Entity Framework Core
+- PostgreSQL (Docker)
+- xUnit
+- GitHub Actions (CI)
+- Clean Architecture
+
+---
+
+### 🐳 Running with Docker
+
+Make sure Docker is running.
+
+Start PostgreSQL:
+
+```bash
+docker compose up -d
+
+Apply migrations:
+
+dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
+
+Apply migrations:
+
+dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
+
+Run the API:
+
+dotnet run --project ./backend/OrderFlow.Api
+
+Running Tests
+dotnet test
+
+CI runs automatically on push via GitHub Actions.
+
+📦 API Endpoints
+Method	Endpoint	Description
+POST	/api/products	Create product
+GET	/api/products	List with pagination & filters
+GET	/api/products/{id}	Get by id
+PUT	/api/products/{id}	Update product
+DELETE	/api/products/{id}	Soft delete (deactivate)
+
+Query parameters for listing:
+
+search
+active
+page
+pageSize
+🎯 Why this project?
+
+This project demonstrates:
+
+Clean separation of layers
+
+Business rule enforcement in Domain
+
+UseCase-driven architecture
+
+Proper HTTP semantics
+
+Automated testing
+
+CI pipeline
+
+It is structured to reflect production-ready backend practices.
+
+🇧🇷 Português
+📌 Visão Geral
+
+OrderFlow é uma API backend desenvolvida para demonstrar arquitetura limpa, organização em camadas e boas práticas profissionais com .NET 8.
+
+O projeto implementa CRUD completo de Produtos com:
+
+Paginação
+
+Filtros
+
+Soft delete
+
+Middleware global de exceção
+
+Testes unitários
+
+Pipeline CI com GitHub Actions
+
+🏗 Arquitetura
+
+O projeto segue separação por camadas:
+
+Domain → Regras de negócio
+
+Application → Casos de uso
+
+Infrastructure → Acesso a dados (EF + PostgreSQL)
+
+API → Controllers e configuração
+
+Essa organização facilita manutenção, testes e evolução.
+
+🚀 Tecnologias
+
+.NET 8
+
+ASP.NET Core Web API
+
+Entity Framework Core
+
+PostgreSQL (Docker)
+
+xUnit
+
+GitHub Actions
+
+Clean Architecture
+
+🧪 Executando os testes
+dotnet test
+📦 Endpoints principais
+
+Criar produto
+
+Listar produtos (com paginação e filtros)
+
+Buscar por ID
+
+Atualizar produto
+
+Desativar produto (soft delete)
+
+👨‍💻 Author
+
+Developed as a portfolio project to demonstrate backend engineering practices.
