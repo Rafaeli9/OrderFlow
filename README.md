@@ -59,114 +59,161 @@ Apply migrations:
 
 dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
 
-Apply migrations:
-
-dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
-
 Run the API:
 
 dotnet run --project ./backend/OrderFlow.Api
 
-Running Tests
+Running Tests:
+
 dotnet test
 
 CI runs automatically on push via GitHub Actions.
 
+```
+
+---
+
 📦 API Endpoints
-Method	Endpoint	Description
-POST	/api/products	Create product
-GET	/api/products	List with pagination & filters
-GET	/api/products/{id}	Get by id
-PUT	/api/products/{id}	Update product
-DELETE	/api/products/{id}	Soft delete (deactivate)
+- Method	Endpoint	Description
+- POST	/api/products	Create product
+- GET	/api/products	List with pagination & filters
+- GET	/api/products/{id}	Get by id
+- PUT	/api/products/{id}	Update product
+- DELETE	/api/products/{id}	Soft delete (deactivate)
 
 Query parameters for listing:
 
-search
-active
-page
-pageSize
+- search
+- active
+- page
+- pageSize
+
+
+--- 
+
 🎯 Why this project?
 
 This project demonstrates:
 
-Clean separation of layers
+- Clean separation of layers
 
-Business rule enforcement in Domain
+- Business rule enforcement in Domain
 
-UseCase-driven architecture
+- UseCase-driven architecture
 
-Proper HTTP semantics
+- Proper HTTP semantics
 
-Automated testing
+- Automated testing
 
-CI pipeline
+- CI pipeline
 
-It is structured to reflect production-ready backend practices.
+- It is structured to reflect production-ready backend practices.
 
-🇧🇷 Português
-📌 Visão Geral
+---
+
+👨‍💻 Author
+
+Developed as a portfolio project to demonstrate backend engineering practices.
+
+---
+## 🇧🇷 Português
+
+### 📌 Visão Geral
 
 OrderFlow é uma API backend desenvolvida para demonstrar arquitetura limpa, organização em camadas e boas práticas profissionais com .NET 8.
 
 O projeto implementa CRUD completo de Produtos com:
 
-Paginação
+- Paginação
 
-Filtros
+- Filtros
 
-Soft delete
+- Soft delete
 
-Middleware global de exceção
+- Middleware global de exceção
 
-Testes unitários
+- Testes unitários
 
-Pipeline CI com GitHub Actions
+- Pipeline CI com GitHub Actions
+
+---
 
 🏗 Arquitetura
 
 O projeto segue separação por camadas:
 
-Domain → Regras de negócio
+- Domain → Regras de negócio
 
-Application → Casos de uso
+- Application → Casos de uso
 
-Infrastructure → Acesso a dados (EF + PostgreSQL)
+- Infrastructure → Acesso a dados (EF + PostgreSQL)
 
-API → Controllers e configuração
+- API → Controllers e configuração
 
-Essa organização facilita manutenção, testes e evolução.
+- Essa organização facilita manutenção, testes e evolução.
+
+---
 
 🚀 Tecnologias
 
-.NET 8
+- .NET 8
 
-ASP.NET Core Web API
+- ASP.NET Core Web API
 
-Entity Framework Core
+- Entity Framework Core
 
-PostgreSQL (Docker)
+- PostgreSQL (Docker)
 
-xUnit
+- xUnit
 
-GitHub Actions
+- GitHub Actions
 
-Clean Architecture
+- Clean Architecture
 
-🧪 Executando os testes
+---
+
+### 🐳 Rodando com Docker
+
+Certifique-se de que o Docker esteja rodando.
+
+Subir o PostgreSQL:
+
+```bash
+docker compose up -d
+
+Aplicar as migrations:
+
+dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
+
+Rodar a API:
+
+dotnet run --project ./backend/OrderFlow.Api
+
+O Swagger estará disponível em:
+
+http://localhost:5082/swagger
+
+Executando os testes:
+
 dotnet test
+```
+
+---
+
 📦 Endpoints principais
 
-Criar produto
+- Criar produto
 
-Listar produtos (com paginação e filtros)
+- Listar produtos (com paginação e filtros)
 
-Buscar por ID
+- Buscar por ID
 
-Atualizar produto
+- Atualizar produto
 
-Desativar produto (soft delete)
+- Desativar produto (soft delete)
 
-👨‍💻 Author
+---
 
-Developed as a portfolio project to demonstrate backend engineering practices.
+👨‍💻 Autor
+
+Portifólio desenvolvido para demonstrar práticas de backend.
