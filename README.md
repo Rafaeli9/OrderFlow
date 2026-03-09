@@ -124,13 +124,13 @@ http://localhost:4200
 ### 📸 Screenshots
 
 #### Product List
-![Product List](docs/images/products-list.png)
+![Product List](docs/images/products-list.PNG)
 
 #### Create Product
-![Create Product](docs/images/product-create.png)
+![Create Product](docs/images/product-create.PNG)
 
 #### Edit Product
-![Edit Product](docs/images/products-edit.png)
+![Edit Product](docs/images/products-edit.PNG)
 
 --- 
 
