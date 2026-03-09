@@ -1,0 +1,32 @@
+.page {
+  padding: 8px 0;
+}
+
+.page-header {
+  margin-bottom: 16px;
+}
+
+.content-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 640px;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.error {
+  color: #b00020;
+  margin: 0;
+}

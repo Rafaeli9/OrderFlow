@@ -5,6 +5,7 @@ using OrderFlow.Application.UseCases.ListProducts;
 using OrderFlow.Application.UseCases.GetProductById;
 using OrderFlow.Application.UseCases.UpdateProduct;
 using OrderFlow.Application.UseCases.DeleteProduct;
+using OrderFlow.Application.UseCases.ActivateProduct;
 
 
 namespace OrderFlow.Api.Controllers;
@@ -18,19 +19,22 @@ public class ProductsController : ControllerBase
     private readonly GetProductByIdUseCase _getProductByIdUseCase;
     private readonly UpdateProductUseCase _updateProductUseCase;
     private readonly DeleteProductUseCase _deleteProductUseCase;
+    private readonly ActivateProductUseCase _activateProductUseCase;
 
- public ProductsController(
-    CreateProductUseCase createProductUseCase,
-    ListProductsUseCase listProductsUseCase,
-    GetProductByIdUseCase getProductByIdUseCase,
-    UpdateProductUseCase updateProductUseCase,
-    DeleteProductUseCase deleteProductUseCase)
+    public ProductsController(
+        CreateProductUseCase createProductUseCase,
+        ListProductsUseCase listProductsUseCase,
+        GetProductByIdUseCase getProductByIdUseCase,
+        UpdateProductUseCase updateProductUseCase,
+        DeleteProductUseCase deleteProductUseCase,
+        ActivateProductUseCase activateProductUseCase)
     {
         _createProductUseCase = createProductUseCase;
         _listProductsUseCase = listProductsUseCase;
         _getProductByIdUseCase = getProductByIdUseCase;
         _updateProductUseCase = updateProductUseCase;
         _deleteProductUseCase = deleteProductUseCase;
+        _activateProductUseCase = activateProductUseCase;
     }
 
   [HttpGet]
@@ -91,6 +95,17 @@ public class ProductsController : ControllerBase
         var deleted = await _deleteProductUseCase.ExecuteAsync(id, ct);
 
         if (!deleted)
+            return NotFound();
+
+        return NoContent();
+    }
+
+    [HttpPatch("{id:guid}/activate")]
+    public async Task<IActionResult> Activate(Guid id, CancellationToken ct)
+    {
+        var activated = await _activateProductUseCase.ExecuteAsync(id, ct);
+
+        if (!activated)
             return NotFound();
 
         return NoContent();

@@ -7,6 +7,7 @@ using OrderFlow.Application.UseCases.ListProducts;
 using OrderFlow.Application.UseCases.GetProductById;
 using OrderFlow.Application.UseCases.UpdateProduct;
 using OrderFlow.Application.UseCases.DeleteProduct;
+using OrderFlow.Application.UseCases.ActivateProduct;
 using OrderFlow.Api.Middlewares;
 
 
@@ -30,6 +31,18 @@ builder.Services.AddScoped<GetProductByIdUseCase>();
 builder.Services.AddScoped<UpdateProductUseCase>();
 builder.Services.AddScoped<DeleteProductUseCase>();
 builder.Services.AddScoped<ExceptionHandlingMiddleware>();
+builder.Services.AddScoped<ActivateProductUseCase>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Frontend", policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
@@ -42,6 +55,8 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
+
+app.UseCors("Frontend");
 
 app.MapControllers();
 
