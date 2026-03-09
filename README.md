@@ -130,7 +130,7 @@ http://localhost:4200
 ![Create Product](docs/images/product-create.png)
 
 #### Edit Product
-![Edit Product](docs/images/product-edit.png)
+![Edit Product](docs/images/products-edit.png)
 
 --- 
 
@@ -279,13 +279,13 @@ http://localhost:4200
 ### 📸 Imagens do sistema
 
 #### Lista de produtos
-![Lista de produtos](docs/images/products-list.png)
+![Lista de produtos](docs/images/products-list.PNG)
 
 #### Cadastro de produto
-![Cadastro de produto](docs/images/product-create.png)
+![Cadastro de produto](docs/images/product-create.PNG)
 
 #### Edição de produto
-![Edição de produto](docs/images/product-edit.png)
+![Edição de produto](docs/images/products-edit.PNG)
 
 ---
 
