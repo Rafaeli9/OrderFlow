@@ -54,22 +54,29 @@ Start PostgreSQL:
 
 ```bash
 docker compose up -d
+```
 
 Apply migrations:
-
+```
 dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
+```
 
 Run the API:
-
+```
 dotnet run --project ./backend/OrderFlow.Api
+```
+
+The Swagger wiil be available at:
+```
+http://localhost:5082/swagger
+```
 
 Running Tests:
-
+```
 dotnet test
+```
 
 CI runs automatically on push via GitHub Actions.
-
-```
 
 ---
 
@@ -88,6 +95,42 @@ Query parameters for listing:
 - page
 - pageSize
 
+
+--- 
+
+
+
+### 💻 Frontend
+
+- Angular
+- Angular Material
+
+Run the frontend:
+
+```bash
+cd frontend
+npm install
+ng serve
+```
+
+The application will be available at:
+
+```
+http://localhost:4200
+````
+
+---
+
+### 📸 Screenshots
+
+#### Product List
+![Product List](docs/images/products-list.png)
+
+#### Create Product
+![Create Product](docs/images/product-create.png)
+
+#### Edit Product
+![Edit Product](docs/images/product-edit.png)
 
 --- 
 
@@ -180,24 +223,26 @@ Subir o PostgreSQL:
 
 ```bash
 docker compose up -d
-
-Aplicar as migrations:
-
-dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
-
-Rodar a API:
-
-dotnet run --project ./backend/OrderFlow.Api
-
-O Swagger estará disponível em:
-
-http://localhost:5082/swagger
-
-Executando os testes:
-
-dotnet test
 ```
 
+Aplicar as migrations:
+```
+dotnet ef database update --project ./backend/OrderFlow.Infrastructure --startup-project ./backend/OrderFlow.Api
+```
+Rodar a API:
+```
+dotnet run --project ./backend/OrderFlow.Api
+```
+
+O Swagger estará disponível em:
+```
+http://localhost:5082/swagger
+```
+
+Executando os testes:
+````
+dotnet test
+````
 ---
 
 📦 Endpoints principais
@@ -211,6 +256,36 @@ dotnet test
 - Atualizar produto
 
 - Desativar produto (soft delete)
+
+---
+
+### 💻 Frontend
+
+- Angular
+- Angular Material
+  
+Rodar o frontend:
+```markdown
+
+cd frontend
+npm install
+ng serve
+````
+A aplicação estará disponível em:
+```
+http://localhost:4200
+```
+---
+### 📸 Imagens do sistema
+
+#### Lista de produtos
+![Lista de produtos](docs/images/products-list.png)
+
+#### Cadastro de produto
+![Cadastro de produto](docs/images/product-create.png)
+
+#### Edição de produto
+![Edição de produto](docs/images/product-edit.png)
 
 ---
 
